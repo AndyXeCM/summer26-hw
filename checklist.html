@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>互动清单 | Aoody 暑假作业作战室 V3</title>
+<link rel="stylesheet" href="styles.css">
+<script src="data.js"></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html"><span class="dot"></span><span>Aoody 暑假作业作战室 V3</span></a><nav><a href="index.html">总览</a><a href="checklist.html">互动清单</a><a href="daily-plan.html">每日计划</a><a href="ge.html">GE 选书与任务</a><a href="ap-lit.html">AP Lit</a><a href="ap-chem.html">AP Chem</a><a href="calc.html">Calc BC</a><a href="whap.html">WHAP 地图</a><a href="deploy.html">GitHub Pages</a></nav></div></header>
+<main class="shell">
+<section class="hero"><span class="kicker">自动保存 · 可导出备份</span><h1>互动详细 checklist ✅</h1><p>勾选后会自动保存在这个浏览器里。建议每天结束后看一次总进度。6月30日导出 JSON 备份，免得进度被浏览器的小精灵吞掉。</p></section>
+<div class="card"><h2>总进度：<span data-total-progress>0%</span></h2><div class="progress-wrap"><div class="progress-bar" data-total-bar></div></div><p class="muted"><span data-total-count>0/0</span> 项已完成。<span data-save-state></span></p><div class="button-row"><button class="btn green" data-export>导出进度备份 JSON</button><label class="btn secondary">导入进度 JSON<input type="file" data-import accept="application/json" hidden></label><button class="btn secondary" data-print>打印 checklist</button><button class="btn danger" data-reset>清空勾选</button></div></div>
+<div class="card" style="margin-top:18px"><h2>按课程筛选</h2><div class="filters" data-filters></div><div class="task-list" data-task-list></div></div>
+<div class="card" style="margin-top:18px"><h2>今日备注</h2><p class="muted">可以写今天遇到的问题，例如“Chem 第 12 题不会”或“WHAP Map 2 的 Middle East 边界太挤”。会自动保存。</p><textarea class="notes-area" data-notes="checklist"></textarea><p class="save-state" data-save-state></p></div>
+</main>
+<footer class="shell footer">本网页是离线静态网页。勾选状态保存在当前浏览器的 localStorage。换浏览器或换设备前，请到“互动清单”导出备份 JSON。</footer>
+</body></html>
