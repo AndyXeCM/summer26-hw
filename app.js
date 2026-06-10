@@ -49,7 +49,7 @@ function updateProgress(){
 }
 function renderDaily(){
   const target = document.querySelector('[data-daily-plan]'); if(!target) return;
-  target.innerHTML = (window.DAILY_PLAN||[]).map((d,i)=>`<div class="card day-card"><div class="date-chip">${d[0]}</div><div><h3>${d[1]}</h3><p>${d[2]}</p><label class="task"><input type="checkbox" data-task-id="day-${i}"><div><div class="task-title">这一天完成了</div><div class="task-detail">勾选后同样会自动保存。</div></div></label></div></div>`).join('');
+  target.innerHTML = (window.DAILY_PLAN||[]).map((d,i)=>`<div class="card day-card"><div class="date-chip">${d[0]}</div><div><h3>${d[1]}</h3><div class="daily-detail">${d[2]}</div><label class="task"><input type="checkbox" data-task-id="day-${i}"><div><div class="task-title">这一天完成了</div><div class="task-detail">勾选后同样会自动保存。</div></div></label></div></div>`).join('');
   const state = loadState();
   target.querySelectorAll('input[data-task-id]').forEach(cb=>{cb.checked=!!state[cb.dataset.taskId];cb.closest('.task').classList.toggle('done',cb.checked);cb.addEventListener('change',e=>{setTask(e.target.dataset.taskId,e.target.checked);e.target.closest('.task').classList.toggle('done',e.target.checked)})})
 }
